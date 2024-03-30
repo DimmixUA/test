@@ -1,0 +1,18 @@
+import requests
+
+def reload_css(url):
+    try:
+        # Sending an HTTP GET request to the URL
+        response = requests.get(url)
+        # Checking if the request was successful (status code 200)
+        if response.status_code == 200:
+            print("CSS reloaded successfully.")
+        else:
+            print(f"Failed to reload CSS. Status code: {response.status_code}")
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+
+if __name__ == "__main__":
+    # Replace 'URL_HERE' with the URL of the webpage whose CSS you want to reload
+    webpage_url = 'URL_HERE'
+    reload_css(webpage_url)
